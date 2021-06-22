@@ -55,7 +55,7 @@ NOTE: n is number in *each* group
 > # A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment
 > # are greater in the low-framing condition than the high-framing condition. α = 0.05.
 > 
-> observedEffectEnjoyment <- 0.11089218871109399
+> observedEffectEnjoyment <- 0.13
 > # Our previous experiment suggests this effect might be small, if it exists - smaller than
 > # is of interest. As we can achieve medium-to-large and greater effects on enjoyment through
 > # the game design, anything less than a medium effect is not of enough importance to warrent
@@ -63,8 +63,10 @@ NOTE: n is number in *each* group
 > 
 > 
 > # Hypothesis 3
-> observedEffectPlayFraming <- -0.24660129318345286
-> # Our previous experiment suggest the effect might be small.
+> observedEffectPlayFraming <- -0.23
+> # Our previous experiment suggest the effect might be small. We can't afford to look for effects
+> # this small, so we will be cautious in interpreting null results for this hypothesis test. However,
+> # if it is not also having effects on enjoyment, it is probably smaller than is of interest.
 > 
 > 
 > # Largest sample size is is 63.76561 per group. These sample sizes are based on t-tests, which can be less efficient
@@ -75,9 +77,9 @@ NOTE: n is number in *each* group
 [1] 73.80279
 > 
 > # Which we will round to 74. This makes the sample size in both groups 148.
-> # However, we expect a number of exclusions. Our previous experiment had a exclusion rate of 0.18.
-> # We have adjusted the wording on the 'bug' question because we were getting several reports that
-> # probably had no impact, so we expect that proportion to decrease.
+> # However, we expect a number of exclusions. Our previous exclusion rate was high ~1/3.
+> # This time we have significantly decreased the required number of moves from 16 to 10.
+> # This should significantly reduce our exclusion rate.
 > # If we add 20 to our sample to increase to 168 participants, that gives us room for an exclusion
 > # rate of just under 0.12. Including this in the original sample size means we don't need a complicated stopping rule.
 > 
@@ -92,4 +94,4 @@ NOTE: n is number in *each* group
 > 
 > proc.time()
    user  system elapsed 
-  0.137   0.022   0.145 
+  0.123   0.025   0.135 

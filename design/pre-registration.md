@@ -71,7 +71,7 @@ Variables
 
 We will manipulate the information and instructions given to participants at the start of the experiment. There were two conditions:
 
-**With Intruction**: In the with-instruction condition, participants will be given the following instruction before playing the game: "While you are playing this game, enter words in the order that feels most grammatically correct to you."
+**With Instruction**: In the with-instruction condition, participants will be given the following instruction before playing the game: "While you are playing this game, enter words in the order that feels most grammatically correct to you."
 
 **Without Instruction**: In the without-instruction condition, participants will be given the following instruction before playing the game: "Play this game however you like."
 
@@ -104,7 +104,7 @@ Analysis Plan
 The following will be excluded:
 
 1. Participants reporting their age as under 18
-2. Participants reporting their first langauge as other than English.
+2. Participants reporting their first language as other than English.
 3. Participants with fewer than 16 moves
 4. Participants reporting a bug
 

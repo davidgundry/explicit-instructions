@@ -42,7 +42,9 @@ observedEffectEnjoyment <- 0.13
 
 # Hypothesis 3
 observedEffectPlayFraming <- -0.23
-# Our previous experiment suggest the effect might be small.
+# Our previous experiment suggest the effect might be small. We can't afford to look for effects
+# this small, so we will be cautious in interpreting null results for this hypothesis test. However,
+# if it is not also having effects on enjoyment, it is probably smaller than is of interest.
 
 
 # Largest sample size is is 63.76561 per group. These sample sizes are based on t-tests, which can be less efficient
