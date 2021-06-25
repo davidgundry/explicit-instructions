@@ -51,6 +51,7 @@ NOTE: n is number in *each* group
 NOTE: n is number in *each* group
 
 > 
+> 
 > # Hypothesis 2
 > # A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment
 > # are greater in the low-framing condition than the high-framing condition. α = 0.05.
@@ -92,6 +93,7 @@ NOTE: n is number in *each* group
 > # Editor(s): R.H. Riffenburgh, Academic Press, pp. 365-391, [Relevant section available at:
 > # https://www.sciencedirect.com/topics/mathematics/asymptotic-relative-efficiency]
 > 
+> 
 > proc.time()
    user  system elapsed 
-  0.123   0.025   0.135 
+  0.168   0.033   0.363 

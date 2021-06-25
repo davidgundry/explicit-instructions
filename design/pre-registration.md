@@ -2,9 +2,9 @@
 
 ## Description
 
-Investigating whether telling players of an applied game to give accurate data affects data quality, enjoyment, and percieved play framing. Previous work has manipulated the out-of-game framing of the game task to present it either as more experiment-like or more game-like. This did not have an effect on data quality, enjoyment, or play framing. So now we check whether giving a direct instruction has an effect.
+Investigating whether telling players of an applied game to give accurate data affects data quality and enjoyment. Previous work has manipulated the out-of-game framing of the game task to present it either as more experiment-like or more game-like. This did not have an effect on data quality, enjoyment, or play framing. So now we check whether giving a direct instruction has an effect.
 
-This study will let participants play a game in one of two conditions. Either they are told to answer grammatically, or they are told to play however they like. We will analyse the results to determine whether there is an effect of explicit instructions on the accuracy (grammaticality) of the data collected and the enjoyment and play framing. The manipulation will be limited to the text content of the instruction presented to participants immediately before the task begins.
+This study will let participants play a game in one of two conditions. Either they are told to answer grammatically, or they are told to play however they like. We will analyse the results to determine whether there is an effect of explicit instructions on the accuracy (grammaticality) of the data collected and the enjoyment and play framing. The manipulation will be limited to the text content of the instruction presented to participants immediately before the task begins, and the presence or absence of instruction text throughout the game.
 
 Study Information
 -----------
@@ -69,15 +69,15 @@ Variables
 
 ### Manipulated Variable
 
-We will manipulate the information and instructions given to participants at the start of the experiment. There were two conditions:
+We will manipulate the information and instructions given to participants at the start and throughout the experiment. There were two conditions:
 
-**With Instruction**: In the with-instruction condition, participants will be given the following instruction before playing the game: "While you are playing this game, enter words in the order that feels most grammatically correct to you."
+**With Instruction**: In the with-instruction condition, participants will be given the following instruction before playing the game: "While you are playing this game, enter words in the order that feels most grammatically correct to you." On each level the instruction will be shown "Enter words in the order that feels most grammatically correct"
 
-**Without Instruction**: In the without-instruction condition, participants will be given the following instruction before playing the game: "Play this game however you like."
+**Without Instruction**: In the without-instruction condition, participants will be given the following instruction before playing the game: "Play this game however you like." They will not be shown an instruction on each level
 
 ### Measured Variables
 
-**Accuracy**: Accuracy will be measured as the proportion of data collected that corresponds to standard English word order. It will be calculated for each player from the last 16 inputs made by the player.
+**Accuracy**: Accuracy will be measured as the proportion of data collected that corresponds to standard English word order. It will be calculated for each player from the last 10 inputs made by the player.
 
 **Enjoyment**: Enjoyment will be measured using the Intrinsic Motivation Inventory: Enjoyment Subscale. (Deci and Ryan, n.d.)
 
@@ -93,11 +93,11 @@ Analysis Plan
 
 ### Statistical Models
 
-**Hypothesis 1**: A two-tailed Mann-Whitney U test will be used to test whether the distribution of Accuracy differs significantly between the high-framing condition than the low-framing condition. α = 0.05
+**Hypothesis 1**: A two-tailed Mann-Whitney U test will be used to test whether the distribution of Accuracy differs significantly between the with-intruction condition than the without-instruction condition. α = 0.05
 
-**Hypothesis 2**: A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment are greater in the low-framing condition than the high-framing condition. α = 0.05
+**Hypothesis 2**: A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment are greater in the without-instruction condition than the with-instruction condition. α = 0.05
 
-**Hypothesis 3**: A two-tailed two-sample t-test will be used to test whether the mean scores of Play Framing are greater in the low-framing condition than the high-framing condition. α = 0.05
+**Hypothesis 3**: A two-tailed two-sample t-test will be used to test whether the mean scores of Play Framing are greater in the without-instruction condition than the with-instruction condition. α = 0.05
 
 ### Data Exclusion
 
@@ -105,7 +105,7 @@ The following will be excluded:
 
 1. Participants reporting their age as under 18
 2. Participants reporting their first language as other than English.
-3. Participants with fewer than 16 moves
+3. Participants with fewer than 10 moves
 4. Participants reporting a bug
 
 ### Missing Data

@@ -2,6 +2,9 @@
 
 This is a repository of materials and data for the explicit instructions experiment in the Effect of Experiment Framing on Game Data study. 
 
+//TODO: video figures and data example (and visual /play through check)
+//TODO: Check and submit preregistration
+
 ## Directory Structure
 
 * `data/` - processed/anonymised data

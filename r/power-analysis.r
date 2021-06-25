@@ -29,6 +29,7 @@ effectSizeOfInterest <- cohen.ES(test = "t", size = "medium")$effect.size
                                          # was to do with framing(/instructions)
 pwr.t.test(d = effectSizeOfInterest, sig.level = 0.05, power = 0.8, alternative = alt)
 
+
 # Hypothesis 2
 # A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment
 # are greater in the low-framing condition than the high-framing condition. α = 0.05.
@@ -68,3 +69,4 @@ sampleSize
 # R.H. Riffenburgh, 2012. Chapter 18 - Sample Size Estimation and Meta-Analysis, in: Statistics in Medicine (Third Edition),
 # Editor(s): R.H. Riffenburgh, Academic Press, pp. 365-391, [Relevant section available at:
 # https://www.sciencedirect.com/topics/mathematics/asymptotic-relative-efficiency]
+
