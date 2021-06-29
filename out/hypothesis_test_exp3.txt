@@ -1,0 +1,42 @@
+Analysing dataset data 
+
+Hypothesis 1:  With explicit instructions, a greater proportion of the data will be accurate
+    A two-tailed Mann-Whitney U test will be used to test whether the distribution of Accuracy differs
+    significantly between the with-intruction condition than the without-instruction condition. α = 0.05
+With-Instruction mean 0.5522388059701493 sd 0.3318260812055762
+Without-Instruction mean 0.44745762711864406 sd 0.3070189998632511
+Mann-Whitney U test: p = 0.01957192153026763 ; U = 1557.0 ; significant = True ; d = 0.3269692244821917 
+
+
+Hypothesis 2:  With explicit instructions, participants will enjoy the game less
+    A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment
+    are greater in the without-instruction condition than the with-instruction condition. α = 0.05
+With-Instruction mean 3.3113006396588487 sd 0.287790479357572
+Without-Instruction mean 3.3849878934624695 sd 0.36590650475754255
+two tailed t test: p = 0.2087837611056663 ; t = -1.2634892254880778 ; significant = False ; d = -0.225576268462843 
+
+
+Hypothesis 3:  With explicit instructions, participants will experience the game
+    with an 'experiment' frame rather than a 'play' frame.
+    A two-tailed two-sample t-test will be used to test whether the mean scores of Play Framing
+    are greater in the without-instruction condition than the with-instruction condition. α = 0.05
+With-Instruction mean 3.6305970149253732 sd 0.5155869870381481
+Without-Instruction mean 3.652542372881356 sd 0.4869347942622686
+two tailed t test: p = 0.8071162437101298 ; t = -0.244670168763844 ; significant = False ; d = -0.04368203745671179 
+
+
+several-times-a-week    39
+every-day               32
+almost-never            22
+about-once-a-month      17
+about-once-a-week       16
+Name: gaming_frequency, dtype: int64
+
+Exploratory: Correlation between play framing and accuracy
+(Correlation, p)
+(0.045395440340667975, 0.6137383159084719)
+
+Exploratory: TOST test
+diff in means: -0.10478117885150512
+ttest: Ttest_indResult(statistic=1.8314075989225391, pvalue=0.06944010209076827)
+   tost: (0.3615407034987036, (4.03619012900123, 4.7271811652881185e-05, 123.6845919100054), (-0.3551509603505654, 0.3615407034987036, 123.6845919100054))

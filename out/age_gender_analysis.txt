@@ -1,0 +1,8 @@
+Analysing dataset age-gender 
+
+female    86
+male      61
+other      4
+prefer     1
+Name: gender, dtype: int64
+Age min: 18 max 130 sd 14.210315891190849 mean 30.526315789473685

@@ -25,11 +25,11 @@ import ptitprince as pt
 from load_process_exp3 import load_data, process_data
 
 def hypothesis_test_1(high, low):
-    print("""Hypothesis 1:  With high experimental framing, a greater proportion of the data will be accurate
-    A two-tailed Mann-Whitney U test will be used to test whether the distribution of Accuracy
-    differs significantly between the +Framing condition than the -Framing condition. α = 0.05""")
-    c0 = high['proportion_of_valid_data_last16_idealised']
-    c1 = low['proportion_of_valid_data_last16_idealised']
+    print("""Hypothesis 1:  With explicit instructions, a greater proportion of the data will be accurate
+    A two-tailed Mann-Whitney U test will be used to test whether the distribution of Accuracy differs
+    significantly between the with-intruction condition than the without-instruction condition. α = 0.05""")
+    c0 = high['proportion_of_valid_data_last10_idealised']
+    c1 = low['proportion_of_valid_data_last10_idealised']
     alpha = 0.05
     mwu = mannwhitneyu(c0, c1)
     n0 = len(c0)
@@ -38,14 +38,14 @@ def hypothesis_test_1(high, low):
     cond1 = (n1 - 1) * (stdev(c1) ** 2)
     pooledSD = sqrt((cond0 + cond1) / (n0 + n1 - 2))
     cohens_d = (mean(c0) - mean(c1)) / pooledSD
-    print("High-framing mean" ,mean(c0), "sd" ,stdev(c0))
-    print("Low-framing mean" ,mean(c1), "sd", stdev(c1))
+    print("With-Instruction mean" ,mean(c0), "sd" ,stdev(c0))
+    print("Without-Instruction mean" ,mean(c1), "sd", stdev(c1))
     print("Mann-Whitney U test: p =", mwu.pvalue, "; U =",mwu.statistic, "; significant =",(mwu.pvalue < alpha), "; d =",cohens_d, "\n\n")
 
 def hypothesis_test_2(high, low):
-    print("""Hypothesis 2:  With experimental framing, participants will enjoy the game less
+    print("""Hypothesis 2:  With explicit instructions, participants will enjoy the game less
     A two-tailed two-sample t-test will be used to test whether the mean scores of Enjoyment
-    are greater in the low-framing condition than the high-framing condition. α = 0.05.""")
+    are greater in the without-instruction condition than the with-instruction condition. α = 0.05""")
     alpha = 0.05
     c0 = high['imi_enjoyment']
     c1 = low['imi_enjoyment']
@@ -56,15 +56,15 @@ def hypothesis_test_2(high, low):
     cond1 = (n1 - 1) * (stdev(c1) ** 2)
     pooledSD = sqrt((cond0 + cond1) / (n0 + n1 - 2))
     cohens_d = (mean(c0) - mean(c1)) / pooledSD
-    print("High-framing mean" ,mean(c0), "sd" ,stdev(c0))
-    print("Low-framing mean" ,mean(c1), "sd", stdev(c1))
+    print("With-Instruction mean" ,mean(c0), "sd" ,stdev(c0))
+    print("Without-Instruction mean" ,mean(c1), "sd", stdev(c1))
     print("two tailed t test: p =", ttest.pvalue, "; t =",ttest.statistic, "; significant =",(ttest.pvalue < alpha), "; d =",cohens_d, "\n\n")
 
 def hypothesis_test_3(high, low):
-    print("""Hypothesis 3:  Manipulation check: With high experimental framing, participants will
-    experience the game with an 'experiment' frame rather than a 'play' frame.
+    print("""Hypothesis 3:  With explicit instructions, participants will experience the game
+    with an 'experiment' frame rather than a 'play' frame.
     A two-tailed two-sample t-test will be used to test whether the mean scores of Play Framing
-    are greater in the low-framing condition than the high-framing condition. α = 0.05.""")
+    are greater in the without-instruction condition than the with-instruction condition. α = 0.05""")
     alpha = 0.05
     c0 = high['play_framing']
     c1 = low['play_framing']
@@ -75,8 +75,8 @@ def hypothesis_test_3(high, low):
     cond1 = (n1 - 1) * (stdev(c1) ** 2)
     pooledSD = sqrt((cond0 + cond1) / (n0 + n1 - 2))
     cohens_d = (mean(c0) - mean(c1)) / pooledSD
-    print("High-framing mean" ,mean(c0), "sd" ,stdev(c0))
-    print("Low-framing mean" ,mean(c1), "sd", stdev(c1))
+    print("With-Instruction mean" ,mean(c0), "sd" ,stdev(c0))
+    print("Without-Instruction mean" ,mean(c1), "sd", stdev(c1))
     print("two tailed t test: p =", ttest.pvalue, "; t =",ttest.statistic, "; significant =",(ttest.pvalue < alpha), "; d =",cohens_d, "\n\n")
 
 def enjoyment_box_plot(df):
@@ -99,7 +99,7 @@ def enjoyment_raincloud(df):
                 showcaps = True, boxprops = {'facecolor':'none', "zorder":10},\
                 showfliers=True, whiskerprops = {'linewidth':2, "zorder":10},\
                 saturation = 1, orient = ort)
-    plt.xticks(plt.xticks()[0], ["Low-Framing","High-Framing"])
+    plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
 
     ax.set_xlabel("")
     ax.set_ylabel("IMI Enjoyment")
@@ -107,15 +107,16 @@ def enjoyment_raincloud(df):
 
 def valid_proportion_all_data_idealised_boxplot(df):
     plt.clf()
-    boxplot = df.boxplot(column='proportion_of_valid_data_last16_idealised', by='version', grid=False)
+    boxplot = df.boxplot(column='proportion_of_valid_data_last10_idealised', by='version', grid=False)
     plt.suptitle('')
     plt.title("")
+    plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
     boxplot.set_xlabel("")
-    boxplot.set_ylabel("Proportion of Valid Data (last 16, idealised)")
-    plt.savefig('out/prop_valid_data_last16_idealised_per_condition+'+dataset+'.pdf', bbox_inches='tight')
+    boxplot.set_ylabel("Proportion of Valid Data (last 10, idealised)")
+    plt.savefig('out/prop_valid_data_last10_idealised_per_condition+'+dataset+'.pdf', bbox_inches='tight')
 
 def valid_proportion_all_data_idealised_raincloud(df):
-    dy="proportion_of_valid_data_last16_idealised"; dx="version"; ort="v"; pal = sns.color_palette(n_colors=2)
+    dy="proportion_of_valid_data_last10_idealised"; dx="version"; ort="v"; pal = sns.color_palette(n_colors=2)
     f, ax = plt.subplots(figsize=(7, 5))
     ax=pt.half_violinplot( x = dx, y = dy, data = df, palette = pal, bw = .2, cut = 0.,
                         scale = "area", width = .6, inner = None, orient = ort)
@@ -125,10 +126,10 @@ def valid_proportion_all_data_idealised_raincloud(df):
                 showcaps = True, boxprops = {'facecolor':'none', "zorder":10},\
                 showfliers=True, whiskerprops = {'linewidth':2, "zorder":10},\
                 saturation = 1, orient = ort)
-    plt.xticks(plt.xticks()[0], ["Low Framing","High Framing"])
+    plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
     ax.set_xlabel("")
-    ax.set_ylabel("Proportion of Valid Data (last 16, idealised)")
-    plt.savefig('out/prop_valid_data_last16_idealised_per_condition_raincloud+'+dataset+'.pdf', bbox_inches='tight')
+    ax.set_ylabel("Proportion of Valid Data (last 10, idealised)")
+    plt.savefig('out/prop_valid_data_last10_idealised_per_condition_raincloud+'+dataset+'.pdf', bbox_inches='tight')
 
 
 def play_framing_all_data_idealised_raincloud(df):
@@ -142,10 +143,10 @@ def play_framing_all_data_idealised_raincloud(df):
                 showcaps = True, boxprops = {'facecolor':'none', "zorder":10},\
                 showfliers=True, whiskerprops = {'linewidth':2, "zorder":10},\
                 saturation = 1, orient = ort)
-    plt.xticks(plt.xticks()[0], ["Low Framing","High Framing"])
+    plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
     ax.set_xlabel("")
-    ax.set_ylabel("Play framing (last 16, idealised)")
-    plt.savefig('out/play_framing_last16_idealised_per_condition_raincloud+'+dataset+'.pdf', bbox_inches='tight')
+    ax.set_ylabel("Play framing")
+    plt.savefig('out/play_framing_per_condition_raincloud+'+dataset+'.pdf', bbox_inches='tight')
 
 
 def time_per_input_boxplot(df):
@@ -186,12 +187,12 @@ def gaming_frequency_bar_plot(df):
 def correlation(df):
     print("\nExploratory: Correlation between play framing and accuracy")
     print("(Correlation, p)")
-    print(pearsonr(df['play_framing'], df['proportion_of_valid_data_last16_idealised']))
+    print(pearsonr(df['play_framing'], df['proportion_of_valid_data_last10_idealised']))
 
 def tost(high, low):
     print("\nExploratory: TOST test")
-    s1 = high['proportion_of_valid_data_last16_idealised']
-    s2 = low['proportion_of_valid_data_last16_idealised']
+    s1 = high['proportion_of_valid_data_last10_idealised']
+    s2 = low['proportion_of_valid_data_last10_idealised']
     p1 = ttest_ind(s1, s2)
     p2 = ttost_ind(s1, s2, -0.125, 0.125, usevar='unequal')
     print('diff in means:', s2.mean() - s1.mean())

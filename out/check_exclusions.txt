@@ -1,0 +1,9 @@
+Analysing dataset data 
+
+Excluded due to lack of consent (should be 0) 0
+Excluded due to moves < 10 = 21
+Excluded due reporting bugs 4
+Excluded due to language 0 (should be 0 as already excluded)
+Total count 126
+Count in HighFraming condition 67
+Count in LowFraming condition 59

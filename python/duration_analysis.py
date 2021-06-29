@@ -19,7 +19,7 @@ from math import sqrt
 
 def duration_histogram(high, low):
     plt.clf()
-    bins = np.linspace(500, 1200, 24)
+    bins = np.linspace(500, 2200, 24)
     plt.hist(high['duration'], bins, alpha=0.5, label="High Framing")
     plt.hist(low['duration'], bins, alpha=0.5, label="Low Framing")
     plt.suptitle('')

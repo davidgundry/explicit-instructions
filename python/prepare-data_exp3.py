@@ -22,7 +22,7 @@
 import random
 import re
 
-filename = "raw/first-30.json"
+filename = "raw/raw.json"
 
 def shuffle(filename):
     with open(filename) as f:
@@ -57,7 +57,7 @@ def removeLinesWithBadAgesOrLanguages(filename):
     excluded = []
     with open(filename) as f:
         for line in f:
-            x = re.search('"([\-0-9]+)","((male)|(female)|(other)|(prefer\-not\-to\-say))","([a-z]+)"', line) 
+            x = re.search('"([\-0-9]+)","((male)|(female)|(other)|(prefer))","([a-z]+)"', line) 
             language = x.group(7)
             if language == "other":
                 excluded.append(line)
@@ -107,7 +107,7 @@ def createDurationCSV(filename):
 def createAgeGenderCSV(filename):
     with open(filename) as f:
         content = f.read()
-    content = re.sub('.+"([\-0-9]+)","((male)|(female)|(other)|(prefer\-not\-to\-say))","([a-z]+)".+', r'\1,\2', content)
+    content = re.sub('.+"([\-0-9]+)","((male)|(female)|(other)|(prefer))","([a-z]+)".+', r'\1,\2', content)
     outputFile = "data/age-gender.csv"
     with open(outputFile, "w") as f:
         f.write(content)
@@ -117,7 +117,7 @@ def justData(filename):
     with open(filename) as f:
         content = f.read()
     content = re.sub('"duration":[0-9\.]+,', '', content)
-    content = re.sub('"([\-0-9]+)","((male)|(female)|(other)|(prefer\-not\-to\-say))","([a-z]+)"', r'"\7"', content)
+    content = re.sub('"([\-0-9]+)","((male)|(female)|(other)|(prefer))","([a-z]+)"', r'"\7"', content)
     content = re.sub('\["start"\],?', '', content) # Recoding pressing the "start" button to start the game. This shouldn't have been logged.
     outputFile = "data/data.json"
     with open(outputFile, "w") as f:

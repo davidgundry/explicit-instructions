@@ -26,7 +26,13 @@ We want to reduce our exclusion rate from previous experiments. This will bring 
 
 ## Data collection
 
-//TODO: details of data collection go here
+Data collection started 28 June 2021 10:47 Completed at 13:10. 193 began the study, 24 returned their submission, 1 timed out, leaving 168 who completed on Prolific.
+
+164 records were retrieved from database. Of these 12 reported langauges other than English, leaving a dataset of 152 records.
+
+Reward per hour: £5.84
+
+One record had missing data. This is in `record-with-missing-data.json`.
 
 ## Data Source
 
@@ -44,7 +50,7 @@ The expected data format is in `raw/debug-example.json`, it looks like this (IDs
 
 * **_id**: Database record ID
 * **data**: Participant data recorded from game (a JSON object)
-    * **gameVersion**: `HighFraming` (=With instructions) or `LowFraming` (=Without instructions)
+    * **gameVersion**: `HighFraming` (=With instruction) or `LowFraming` (=Without instruction)
     * **loadTime**: a timestamp at the point the game loads (uses JavaScript `Date.now()`)
     * **uploadTime**: a timestamp at the point the game begins uploading data to the server, which is immediately upon the final questionnaire being submitted (uses JavaScript `Date.now()`)
     * **duration**: seconds between submission of pre-test questionnaire (and start of **tutorial**), and play-end interrupt before post-test questionnaire
@@ -77,10 +83,10 @@ The script will write files to disk in the folder "data". It will also write man
 After processing, the data (`data.json`) looks like this:
 
     [
-        {"data":{"gameVersion":"HighFraming","playDuration":480.002,"consent":[true,true,true],"answers":["6","6","6","6","1","2","2","2","2","2","2","nobug","","english","every-day"],"moves":[["circle","square","triangle"],["filled","empty","green"],["red","green","blue"],["big","empty","circle"],["small","empty","triangle"],["small","empty","triangle"],["filled","empty","green"],["red","green","blue"],["big","triangle","empty"],["small","empty","triangle"],["small","empty","circle"],["red","green","blue"],["empty","filled","green"],["empty","filled","green"],["green","red","blue"]],"moveDurations":[1.5314450000005309,1.915494999999486,1.7831050000004325,5.033134999999675,4.784264999998413,7.050825000000259,1.1063899999990099,2.8494300000002113,9.9504450000004,3.452929999999469,11.851834999999483,79.11336499999923,2.4985599999999977,34.44956000000093,3.0330149999990828]},"version":"3.1.0.explicit-framing-3.0.0.HighFraming"}
+        {"data":{"gameVersion":"HighFraming","playDuration":480.002,"consent":[true,true,true],"answers":["6","6","6","6","1","2","2","2","2","2","2","nobug","","english","every-day"],"moves":[["circle","square","triangle"],["filled","empty","green"],["red","green","blue"],["big","empty","circle"],["small","empty","triangle"],["small","empty","triangle"],["filled","empty","green"],["red","green","blue"],["big","triangle","empty"],["small","empty","triangle"],["small","empty","circle"],["red","green","blue"],["empty","filled","green"],["empty","filled","green"],["green","red","blue"]],"moveDurations":[1.5314450000005309,1.915494999999486,1.7831050000004325,5.033134999999675,4.784264999998413,7.050825000000259,1.1063899999990099,2.8494300000002113,9.9504450000004,3.452929999999469,11.851834999999483,79.11336499999923,2.4985599999999977,34.44956000000093,3.0330149999990828]},"version":"4.1.0.explicit-framing-4.0.0.HighFraming"}
     ]
 
-* **gameVersion**: Either "HighFraming" or "LowFraming".
+* **gameVersion**: Either "HighFraming" (with-instruction) or "LowFraming" (without-instruction).
 * **playDuration**: seconds between start of logged (non-tutorial) levels, and play-end interrupt before post-test questionnaire
 * **consent**: Checkbox values to consent questions, in order
 * **answers**: Answers to the questions:
@@ -92,7 +98,7 @@ After processing, the data (`data.json`) looks like this:
     6. Description of the bug (optional, string / `null`)
 * **moves**: Array of moves attempted by the player (sets of three words inputted, whether or not they trigger an action in the game). These are in order they were selected. Moves are in order attempted.
 * **moveDurations**: Array of time taken (in seconds) for each move listed in `moves`.
-* **version**: Game version and condition data was collected from
+* **version**: Game version and condition data was collected from. Note that 4.x is the explicit instructions experiment, the "explicit framing" tag is out of date.
 
 ### Age and Gender
 

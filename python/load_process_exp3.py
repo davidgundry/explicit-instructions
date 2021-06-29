@@ -92,7 +92,10 @@ def process_data(rawData):
             proportion_of_valid_data_providing_mechanic_actuations_last16_idealised.append(None)
 
         #Calculate Time per input
-        time_per_input_from_moveDurations.append(sum(d["moveDurations"])/len(d["moveDurations"]))
+        if (len(d["moveDurations"]) > 0):
+            time_per_input_from_moveDurations.append(sum(d["moveDurations"])/len(d["moveDurations"]))
+        else:
+            time_per_input_from_moveDurations.append(None)
         if count_all > 0:
             time_per_input_from_8min.append((8*60)/count_all)
         else:
