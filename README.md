@@ -34,6 +34,8 @@ Reward per hour: £5.84
 
 One record had missing data. This is in `record-with-missing-data.json`.
 
+Raw data deleted on 29 June 2021 at 10:54.
+
 ## Data Source
 
 Data downloaded from [Restdb.io](https://restdb.io) using the script [get-restdb-data](https://github.com/davidgundry/get-restdb-data).
