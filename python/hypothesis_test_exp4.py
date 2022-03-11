@@ -22,7 +22,7 @@ import seaborn as sns
 sns.set(style="ticks", font_scale=1.5)
 import ptitprince as pt
 
-from load_process_exp3 import load_data, process_data
+from load_process_exp4 import load_data, process_data
 
 def hypothesis_test_1(high, low):
     print("""Hypothesis 1:  With explicit instructions, a greater proportion of the data will be accurate

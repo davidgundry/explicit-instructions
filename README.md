@@ -66,7 +66,7 @@ For other variables, see the 'Data Format' section below.
 
 To prepare (i.e. anonymise) the raw data run the following command from the project directory. 
 
-    python python/prepare-data_exp3.py
+    python python/prepare-data_exp4.py
 
 Edit that file to set the source data filename to match the one as downloaded.
 
@@ -132,7 +132,7 @@ In the project directory (for this experiment) run the following commands (on Li
 
     python python/create_data_csv.py
     
-    python python/hypothesis_test_exp3.py > out/hypothesis_test_exp3.txt
+    python python/hypothesis_test_exp4.py > out/hypothesis_test_exp4.txt
 
     python python/duration_analysis.py > out/duration_analysis.txt
 
