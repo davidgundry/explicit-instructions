@@ -31,7 +31,7 @@ def hypothesis_test_1(high, low):
     c0 = high['proportion_of_valid_data_last10_idealised']
     c1 = low['proportion_of_valid_data_last10_idealised']
     alpha = 0.05
-    mwu = mannwhitneyu(c0, c1)
+    mwu = mannwhitneyu(c0, c1,alternative='two-sided')
     n0 = len(c0)
     n1 = len(c1)
     cond0 = (n0 - 1) * (stdev(c0) ** 2)
