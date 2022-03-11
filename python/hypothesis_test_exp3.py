@@ -15,7 +15,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from statistics import mean, stdev
 from math import sqrt
-from scipy.stats.stats import pearsonr
+from scipy.stats import pearsonr
 from statsmodels.stats.weightstats import ttost_ind
 
 import seaborn as sns
@@ -112,7 +112,7 @@ def valid_proportion_all_data_idealised_boxplot(df):
     plt.title("")
     plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
     boxplot.set_xlabel("")
-    boxplot.set_ylabel("Proportion of Valid Data (last 10, idealised)")
+    boxplot.set_ylabel("Proportion of Valid Data")
     plt.savefig('out/prop_valid_data_last10_idealised_per_condition+'+dataset+'.pdf', bbox_inches='tight')
 
 def valid_proportion_all_data_idealised_raincloud(df):
@@ -128,7 +128,7 @@ def valid_proportion_all_data_idealised_raincloud(df):
                 saturation = 1, orient = ort)
     plt.xticks(plt.xticks()[0], ["With Instruction","Without Instruction"])
     ax.set_xlabel("")
-    ax.set_ylabel("Proportion of Valid Data (last 10, idealised)")
+    ax.set_ylabel("Proportion of Valid Data")
     plt.savefig('out/prop_valid_data_last10_idealised_per_condition_raincloud+'+dataset+'.pdf', bbox_inches='tight')
 
 

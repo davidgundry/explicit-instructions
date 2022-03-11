@@ -5,7 +5,7 @@ Hypothesis 1:  With explicit instructions, a greater proportion of the data will
     significantly between the with-intruction condition than the without-instruction condition. α = 0.05
 With-Instruction mean 0.5522388059701493 sd 0.3318260812055762
 Without-Instruction mean 0.44745762711864406 sd 0.3070189998632511
-Mann-Whitney U test: p = 0.01957192153026763 ; U = 1557.0 ; significant = True ; d = 0.3269692244821917 
+Mann-Whitney U test: p = 0.039143843060535304 ; U = 2396.0 ; significant = True ; d = 0.3269692244821917 
 
 
 Hypothesis 2:  With explicit instructions, participants will enjoy the game less

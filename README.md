@@ -11,7 +11,7 @@ This is a repository of materials and data for the explicit instructions experim
 * `design/` - ethics, preregistration documents, etc.
 * `final/` - versions of documents that have been officially submitted somewhere
 * `materials/` - contains materials that were used in the experiment
-* `img/` - screenshots of the game //TODO: video figures and screenshots
+* `img/` - screenshots of the game
 * `raw/` - raw data stored here before processing and anonymisation
 
 ## Pre-Registration
