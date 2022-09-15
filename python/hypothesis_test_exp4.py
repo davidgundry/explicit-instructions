@@ -15,7 +15,7 @@ import matplotlib
 import matplotlib.pyplot as plt
 from statistics import mean, stdev
 from math import sqrt
-from scipy.stats import pearsonr
+from scipy.stats import pearsonr, spearmanr
 from statsmodels.stats.weightstats import ttost_ind
 
 import seaborn as sns
@@ -187,7 +187,37 @@ def gaming_frequency_bar_plot(df):
 def correlation(df):
     print("\nExploratory: Correlation between play framing and accuracy")
     print("(Correlation, p)")
-    print(pearsonr(df['play_framing'], df['proportion_of_valid_data_last10_idealised']))
+    print("Pearson's r", pearsonr(df['play_framing'], df['proportion_of_valid_data_last10_idealised']))
+    print("Spearman's rho", spearmanr(df['play_framing'], df['proportion_of_valid_data_last10_idealised']))
+    print("Degrees of freedom", len(df['play_framing']) - 2)
+
+    plt.clf()
+    plt.suptitle('')
+    plt.title("")
+    plt.scatter(df['play_framing'], df['proportion_of_valid_data_last10_idealised'])
+    plt.xlabel("Play Framing")
+    plt.ylabel("Proportion of Valid Data")
+    plt.savefig('out/scatter-play-framing-accuracy+'+dataset+'.pdf', bbox_inches='tight')
+
+    print("\nExploratory: Correlation between play framing and enjoyment")
+    print("Pearson's r", pearsonr(df['play_framing'], df['imi_enjoyment'])) 
+    print("Spearman's rho", spearmanr(df['play_framing'], df['imi_enjoyment']))
+    print("Degrees of freedom", len(df['play_framing']) - 2)
+
+    print("\nExploratory: Correlation between enjoyment and accuracy")
+    print("Pearson's r", pearsonr(df['imi_enjoyment'], df['proportion_of_valid_data_last10_idealised'])) 
+    print("Spearman's rho", spearmanr(df['imi_enjoyment'], df['proportion_of_valid_data_last10_idealised']))
+    print("Degrees of freedom", len(df['imi_enjoyment']) - 2)
+
+def correlationEnjoyment(df):
+    plt.clf()
+    plt.suptitle('')
+    plt.title("")
+    plt.scatter(df['play_framing'], df['imi_enjoyment'])
+    plt.xlabel("Play Framing")
+    plt.ylabel("Enjoyment")
+    plt.savefig('out/scatter-play-framing-enjoyment+'+dataset+'.pdf', bbox_inches='tight')
+
 
 def tost(high, low):
     print("\nExploratory: TOST test")
@@ -223,4 +253,5 @@ time_per_input_raincloud(df)
 gaming_frequency_bar_plot(df)
 print(df['gaming_frequency'].value_counts())
 correlation(df)
+correlationEnjoyment(df)
 tost(highFramingCondition, lowFramingCondition)

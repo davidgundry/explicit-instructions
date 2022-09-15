@@ -34,7 +34,19 @@ Name: gaming_frequency, dtype: int64
 
 Exploratory: Correlation between play framing and accuracy
 (Correlation, p)
-(0.045395440340667975, 0.6137383159084719)
+Pearson's r PearsonRResult(statistic=0.045395440340667975, pvalue=0.6137383159084719)
+Spearman's rho SpearmanrResult(correlation=0.024240658405155793, pvalue=0.7875999596479404)
+Degrees of freedom 124
+
+Exploratory: Correlation between play framing and enjoyment
+Pearson's r PearsonRResult(statistic=0.48490257302680084, pvalue=8.720419410355887e-09)
+Spearman's rho SpearmanrResult(correlation=0.4906782284624066, pvalue=5.452653287921467e-09)
+Degrees of freedom 124
+
+Exploratory: Correlation between enjoyment and accuracy
+Pearson's r PearsonRResult(statistic=0.05968893576870204, pvalue=0.506740534347513)
+Spearman's rho SpearmanrResult(correlation=0.027585557853674492, pvalue=0.7591330304214364)
+Degrees of freedom 124
 
 Exploratory: TOST test
 diff in means: -0.10478117885150512
